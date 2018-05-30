@@ -1,1 +1,1 @@
-web: gunicorn jackpot.wsgi --log-file -
+web: python yourfile.py
