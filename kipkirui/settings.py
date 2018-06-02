@@ -40,9 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     'jackpot.apps.JackpotConfig',
-    'rest_framework',
 
 ]
 
