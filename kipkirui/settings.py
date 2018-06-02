@@ -46,13 +46,9 @@ INSTALLED_APPS = [
 
 ]
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+THIRD_PARTY_APPS = ['rest_framework'] # this list shall contain many more of those useful apps and stuff.
+
+INSTALLED_APPS += THIRD_PARTY_APPS  # Boom.. the things goes skraa.. pop.. pop..
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
