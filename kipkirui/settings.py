@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'jackpot.apps.JackpotConfig',
 
 ]
 
-THIRD_PARTY_APPS = ['rest_framework'] # this list shall contain many more of those useful apps and stuff.
+THIRD_PARTY_APPS = ['djangorestframework'] # this list shall contain many more of those useful apps and stuff.
 
 INSTALLED_APPS += THIRD_PARTY_APPS  # Boom.. the things goes skraa.. pop.. pop..
 
