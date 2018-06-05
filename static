@@ -1,0 +1,8 @@
+STATICFILES_DIRS = (
+    normpath(join(BASE_DIR, 'static')),
+    normpath(join(BASE_DIR, 'upload')),
+)
+
+STATIC_ROOT = normpath(join(BASE_DIR, 'assets'))
+
+STATIC_URL = '/static/'
