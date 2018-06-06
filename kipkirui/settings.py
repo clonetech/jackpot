@@ -139,10 +139,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-    '/home/ken/jackpot/static',
-)
+STATICFILES_DIRS = '/home/ken/jackpot/jackpot/static',
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
