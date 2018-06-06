@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 ]
 
-THIRD_PARTY_APPS = ['rest_framework', 'django_filters'] # this list shall contain many more of those useful apps and stuff.
+THIRD_PARTY_APPS = ['rest_framework'] # this list shall contain many more of those useful apps and stuff.
 
 INSTALLED_APPS += THIRD_PARTY_APPS  # Boom.. the things goes skraa.. pop.. pop..
 
