@@ -66,7 +66,7 @@ ROOT_URLCONF = 'kipkirui.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'lucifer/templates')],
+        'DIRS': [**'C:\\Python27\\Lib\\site-packages\\django\\contrib\\admin\\templates\\admin'**],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
