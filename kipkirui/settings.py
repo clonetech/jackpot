@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'jackpot.apps.JackpotConfig',
+    'django_filters',
 
 
 ]
