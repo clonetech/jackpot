@@ -16,6 +16,7 @@ urlpatterns = [
     path('payment/', views.payment, name='payment'),
     path('guide/', views.guide, name='guide'),
     path('vip_jp/', views.vip_jp, name='vip_jp'),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('accounts/', include('django.contrib.auth.urls')),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
