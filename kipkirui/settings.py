@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'lj@fpp$g64kxdtg_=)gr8t0(_7ill-
 # DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['sportpesajp.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['sportpesajp.herokuapp.com','127.0.0.1','www.sportpesajp.com']
 
 
 # Application definition
