@@ -149,7 +149,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_REDIRECT_URL = '/jackpot'
 
-LOGOUT_REDIRECT_URL = '/index'
+LOGOUT_REDIRECT_URL = '/home'
 
 admin.site.site_header = 'jackpot Admin Panel'
 admin.site.site_title = 'jackpot Admin Panel'
