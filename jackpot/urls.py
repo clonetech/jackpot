@@ -12,7 +12,7 @@ urlpatterns = [
 
     path('single/', views.singlebet, name='singlebet'),
     path('jackpot/', views.jackpotgames, name='jackpotgames'),
-    path('index/', views.index, name='index'),
+    path('home/', views.index, name='index'),
     path('payment/', views.payment, name='payment'),
     path('guide/', views.guide, name='guide'),
     path('vip_jp/', views.vip_jp, name='vip_jp'),
