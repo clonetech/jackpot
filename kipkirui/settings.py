@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jackpot.apps.JackpotConfig',
     'django_filters',
+    'bootstrap3',
+    'responsive',
 
 
 ]
@@ -77,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
+                'responsive.context_processors.device',
             ],
         },
     },
