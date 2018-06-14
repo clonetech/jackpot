@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'jackpot.apps.JackpotConfig',
     'django_filters',
     'bootstrap3',
-    'responsive',
 
 
 ]
