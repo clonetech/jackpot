@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "main_template.html" %}
 
 {% block title %}
 
-JackpotSone - VIP Services
+Sportpesajp - Vip Services
 
 {% endblock %}
 
@@ -17,8 +17,8 @@ JackpotSone - VIP Services
 
  <a style='color: #FA0319' href="{% url 'jackpot:logout' %}">LOG OUT</a>
 
-<li style="float:left"><a href="/jackpot/" style="text-decoration:none"> Jackpot </a></li>
-<li style="float:left"><a href="/punter/" style="text-decoration:none"> Punter </a></li>
+<li><a href="/jackpot/" style="text-decoration:none"> Jackpot </a></li>
+<li><a href="/single/" style="text-decoration:none"> SingleBet </a></li>
 
 
 
@@ -29,13 +29,13 @@ JackpotSone - VIP Services
   <h2 style="color:red">
     Jackpot Analysis
 </h2>
-  {% for item in jackpot %}
+  {% for item in jackpotgames %}
   {% if forloop.first %}
          <i><h4>{{item.published_date}}<h4></i>
      {%endif%}
   {% endfor %}
 
-{% for item in jackpot %}
+{% for item in jackpotgames %}
 
 <h3 style="color:lime">
 {{ item.content }}
@@ -45,7 +45,7 @@ JackpotSone - VIP Services
 
   <table border="2" cellpadding = "5">
 
-    <tr style='background-color: #002147'>
+    <tr style='background-color: indigo'>
   <th style='color: white'>Country</th>
   <th style='color: white'>Home Team</th>
   <th style='color: white'>Away Team</th>
@@ -56,19 +56,19 @@ JackpotSone - VIP Services
 
   </tr>
 
-      {% for item in jackpot %}
+      {% for item in jackpotgames %}
       <tr>
-          <td style='background-color: #87CEEB;' >{{ item.country }}</td>
+          <td style='background-color: plum;' >{{ item.country }}</td>
 
           <td >{{ item.home_team }}</td>
 
-          <td style='background-color: #87CEEB;' >{{ item.away_team}}</td>
+          <td style='background-color: plum;' >{{ item.away_team}}</td>
 
-          <td style='background-color: #87CEEB;' >{{ item.home_odds}}</td>
+          <td style='background-color: plum;' >{{ item.home_odds}}</td>
 
           <td>{{ item.draw_odds}}</td>
 
-          <td style='background-color: #87CEEB;' >{{ item.away_odds}}</td>
+          <td style='background-color: plum;' >{{ item.away_odds}}</td>
 
           <td >{{ item.prediction}}</td>
 
