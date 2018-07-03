@@ -7,26 +7,19 @@
 {% endblock %}
 
 {% block content %}
-  <h2>Log in to My Site</h2>
-  {% if form.errors %}
-    <p style="color: red">Your username and password didn't match. Please try again.</p>
-  {% endif %}
+  <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
-    <input type="hidden" name="next" value="{{ next }}" />
     {% for field in form %}
       <p>
         {{ field.label_tag }}<br>
-        {{ field }}<br>
+        {{ field }}
         {% for error in field.errors %}
           <p style="color: red">{{ error }}</p>
         {% endfor %}
-        {% if field.help_text %}
-          <p><small style="color: green">{{ field.help_text }}</small></p>
-        {% endif %}
       </p>
     {% endfor %}
-    <button type="submit">Log in</button>
+    <button type="submit">Sign up</button>
   </form>
 {% endblock %}
 

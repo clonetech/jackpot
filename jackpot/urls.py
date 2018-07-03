@@ -1,22 +1,24 @@
 from django.conf import settings
-from django.urls import path, include
-from jackpot import views
+from django.urls import path
+from .views import home
+from . import views
 from django.conf.urls.static import static
-from django.views.generic.base import TemplateView
-from . views import jackpotgames, singlebet, payment, guide, vip_jp
-
+from . import views as core_views
+from django.contrib.auth import views as auth_views
 
 app_name = 'jackpot'
 
 urlpatterns = [
 
-    path('single/', views.singlebet, name='singlebet'),
-    path('jackpot/', views.jackpotgames, name='jackpotgames'),
-    path('home/', views.index, name='index'),
+    path('home/', views.home, name='home'),
+    path('punter/', views.punter, name='punter'),
+    path('hexabet/', views.hexabet, name='hexabet'),
     path('payment/', views.payment, name='payment'),
-    path('guide/', views.guide, name='guide'),
-    path('vip_jp/', views.vip_jp, name='vip_jp'),
-    path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('results/', views.results, name='results'),
+    path('jackpot/', views.jackpot, name='jackpot'),
+    path('welcome/', views.welcome, name='welcome'),
+    path('login/', auth_views.login, name='login'),
+    path('logout/', auth_views.logout, name='logout'),
+    path('signup/', core_views.signup, name='signup'),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

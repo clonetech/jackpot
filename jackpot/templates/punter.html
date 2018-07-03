@@ -1,4 +1,4 @@
-{% extends "main_template.html" %}
+{% extends "base.html" %}
 
 {% block title %}
 
@@ -17,8 +17,8 @@ Sportpesajp - Vip Services
 
  <a style='color: #FA0319' href="{% url 'jackpot:logout' %}">LOG OUT</a>
 
-<li><a href="/jackpot/" style="text-decoration:none"> Jackpot </a></li>
-<li><a href="/single/" style="text-decoration:none"> SingleBet </a></li>
+ <li style="float:left"><a href="/jackpot/" style="text-decoration:none"> Jackpot </a></li>
+ <li style="float:left"><a href="/punter/" style="text-decoration:none"> Punter </a></li>
 
 
 
@@ -30,7 +30,7 @@ Sportpesajp - Vip Services
     Odds Of The Day
 </h2>
 
-{% for item in singlebet %}
+{% for item in punter %}
 
   {% if forloop.first %}
          <i><h4>{{item.published_date}}<h4></i>
@@ -39,29 +39,30 @@ Sportpesajp - Vip Services
 
   <table border="2" cellpadding = "5">
 
-    <tr style='background-color: indigo'>
+    <tr style='background-color: #002147'>
   <th style='color: white'>Country</th>
   <th style='color: white'>Home Team</th>
   <th style='color: white'>Home Score</th>
   <th style='color: white'>Away Score</th>
   <th style='color: white'>Away Team</th>
+  <th style='color: white'>Safety</th>
   <th style='color: white'>Prediction</th>
   <th style='color: white'>Status</th>
   </tr>
 
-      {% for item in singlebet %}
+      {% for item in punter %}
       <tr>
-          <td style='background-color: plum;' >{{ item.country }}</td>
+          <td style='background-color: #87CEEB;' >{{ item.country }}</td>
 
           <td >{{ item.home_team }}</td>
 
-          <td style='background-color: plum;' >{{ item.home_score}}</td>
+          <td style='background-color: #87CEEB;' >{{ item.home_score}}</td>
 
-          <td style='background-color: plum;' >{{ item.away_score}}</td>
+          <td style='background-color: #87CEEB;' >{{ item.away_score}}</td>
 
           <td>{{ item.away_team}}</td>
 
-          <td style='background-color: plum;' >{{ item.prediction}}</td>
+          <td style='background-color: #87CEEB;' >{{ item.prediction}}</td>
 
           {% if item.status == 'Lost' %}
 

@@ -4,19 +4,22 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: 	#15317E;
+
 }
 
 li {
-    float: left;
+    float: right;
     border-right: 0px solid white;
 }
 
 li a {
+    float: right;
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -27,7 +30,6 @@ li a:hover {
     background-color: #1B40B3;
 
 }
-
 
 
 #button {
@@ -44,7 +46,7 @@ li a:hover {
 }
 
 #back {
-    background-color: green;
+    background-color: blue;
     border: none;
     color: white;
     padding: 10px 24px;
@@ -63,33 +65,4 @@ li a:hover {
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
-}
-
-ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-ul.topnav li {float: left;}
-
-ul.topnav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-ul.topnav li a:hover:not(.active) {background-color: #111;}
-
-ul.topnav li a.active {background-color: #4CAF50;}
-
-ul.topnav li.right {float: right;}
-
-@media screen and (max-width: 600px){
-    ul.topnav li.right,
-    ul.topnav li {float: none;}
 }
