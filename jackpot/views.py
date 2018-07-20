@@ -17,7 +17,7 @@ def freetips(request):
 
     freetips = Freetips.objects.filter(
         published_date__lte=timezone.now()
-    ).order_by('-published_date')[:8]
+    ).order_by('-published_date')[:6]
 
 
     args ['freetips'] = freetips
@@ -33,7 +33,7 @@ def results(request):
 
     results_teams = Freetips.objects.filter(
         published_date__lte=timezone.now()
-    ).order_by('-published_date')[8:24]
+    ).order_by('-published_date')[6:24]
 
 
     args ['results_teams'] = grouped(results_teams, 6)
