@@ -1,96 +1,62 @@
-from django.shortcuts import render
-
-from django.contrib.auth.tokens import default_token_generator
-
-from django.contrib.auth.forms import AuthenticationForm
-
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-
-from . models import JackpotGames, SingleBet
-
 from django.utils import timezone
-
-from . serializers import JackpotGamesSerializer, SingleBetSerializer
-
-from rest_framework import viewsets
-
-
-
-class SingleBetViewSet(viewsets.ModelViewSet):
-
-    queryset = SingleBet.objects.all()
-
-    serializer_class = SingleBetSerializer
-
-class JackpotGamesViewSet(viewsets.ModelViewSet):
-
-    queryset = JackpotGames.objects.all()
-
-    serializer_class = JackpotGamesSerializer
+from . models import Freetips, Singlebet
+from django.contrib.auth import login, authenticate
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.sites.shortcuts import get_current_site
 
 
+def freetips(request):
 
-def jackpotgames(request):
+    model = Freetips
 
-    model = JackpotGames
-
-    template_name = 'jackpot.html'
+    template_name = 'freetips.html'
 
     args = {}
 
-    jackpotgames = JackpotGames.objects.filter(
+    freetips = Freetips.objects.filter(
         published_date__lte=timezone.now()
-    ).order_by('-published_date')[:17]
+    ).order_by('-published_date')[:8]
 
 
-    args ['jackpotgames'] = jackpotgames
+    args ['freetips'] = freetips
 
-    return render(request, 'jackpot.html', args)
+    return render(request, 'freetips.html', args)
 
+
+def results(request):
+
+    template_name = 'results.html'
+
+    args = {}
+
+    results_teams = Freetips.objects.filter(
+        published_date__lte=timezone.now()
+    ).order_by('-published_date')[8:24]
+
+
+    args ['results_teams'] = grouped(results_teams, 6)
+
+    return render(request, 'results.html', args)
 
 
 def singlebet(request):
 
-    model = SingleBet
-
-    template_name = 'single.html'
+    template_name = 'singlebet.html'
 
     args = {}
 
-    singlebet = SingleBet.objects.filter(
+    singlebet = Singlebet.objects.filter(
         published_date__lte=timezone.now()
-    ).order_by('-published_date')[:2]
+    ).order_by('-published_date')[:7]
 
 
-    args ['singlebet'] = singlebet
+    args ['singlebet'] = grouped(singlebet, 1)
 
-    return render(request, 'single.html', args)
-
-
-def payment(request):
-
-        template_name = 'payment.html'
-
-        return render(request, 'payment.html')
+    return render(request, 'singlebet.html', args)
 
 
-def index(request):
-
-        template_name = 'index.html'
-
-        return render(request, 'index.html')
-
-
-
-def guide(request):
-
-        template_name = 'guide.html'
-
-        return render(request, 'guide.html')
-
-
-def vip_jp(request):
-
-        template_name = 'vip_jp.html'
-
-        return render(request, 'vip_jp.html')
+def grouped(l, n):
+    for i in range(0, len(l), n):
+        yield l[i:i+n]

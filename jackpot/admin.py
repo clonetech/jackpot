@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . models import JackpotGames, SingleBet
+from . models import Freetips, Singlebet
 
-admin.site.register(JackpotGames)
-admin.site.register(SingleBet)
+admin.site.register(Freetips)
+admin.site.register(Singlebet)
